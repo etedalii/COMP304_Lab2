@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/canadian_pizza"
+        android:title="@string/canadian_pizza"
+        android:orderInCategory="1" />
+    <item
+        android:id="@+id/chiken_caesar"
+        android:title="@string/chiken_caesar"
+        android:orderInCategory="2" />
+    <item
+        android:id="@+id/hawaiian_pizza"
+        android:title="@string/hawaiian_pizza"
+        android:orderInCategory="3" />
+    <item
+        android:id="@+id/smoky_maple_pizza"
+        android:title="@string/smokey_maple_bacon"
+        android:orderInCategory="4" />
+    <item
+        android:id="@+id/vaggie_lover_pizza"
+        android:title="@string/veggie_lover_s"
+        android:orderInCategory="5" />
+</menu>
