@@ -1,4 +1,10 @@
 package com.example.mohammadetedali_comp304sec1_lab2;
+/*
+    Author: Mohammad Etedali - 301056465
+    Code updated: June 2021
+    Course: 304 Sec 001
+    Date: 6 June 2021
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 

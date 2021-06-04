@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="centennial_color">#d4df38</color>
+    <color name="centen_black">#212121</color>
 </resources>
