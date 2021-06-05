@@ -10,7 +10,7 @@ package com.example.mohammadetedali_comp304sec1_lab2;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-//This class keep the customer information 
+//This class keep the customer information
 public class Customer implements Parcelable {
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
