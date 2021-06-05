@@ -2,6 +2,7 @@ package com.example.mohammadetedali_comp304sec1_lab2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +21,7 @@ public class Ac_OrderDetail extends AppCompatActivity {
     ArrayList<Pizza> pizzas;
     Spinner pizza_size_spinner;
     TextView txv_totalPrice;
+    boolean doughSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class Ac_OrderDetail extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 for (Pizza item : pizzas) {
                     item.setDough(pizza_size_spinner.getSelectedItem().toString());
-                    switch (pizza_size_spinner.getSelectedItem().toString()){
+                    switch (pizza_size_spinner.getSelectedItem().toString()) {
                         case "Small":
                             break;
                     }
@@ -61,7 +64,7 @@ public class Ac_OrderDetail extends AppCompatActivity {
         });
     }
 
-    private  void  updatedPizzaList(){
+    private void updatedPizzaList() {
         ArrayAdapter<Pizza> pizzaAdapter = new ArrayAdapter<Pizza>(getApplicationContext(),
                 android.R.layout.simple_list_item_1, pizzas);
         lst_pizza.setAdapter(pizzaAdapter);
@@ -74,6 +77,7 @@ public class Ac_OrderDetail extends AppCompatActivity {
     }
 
     public void onRadioButtonClicked(View view) {
+        doughSelected = true;
         // Is the radio button now checked?
         boolean checked = ((RadioButton) view).isChecked();
         // Check which radio button was clicked
@@ -97,8 +101,16 @@ public class Ac_OrderDetail extends AppCompatActivity {
     }
 
     public void onCheckoutClick(View view) {
-        if(view.getId() == R.id.btnCheckOut){
-
+        if (!doughSelected) {
+            Toast.makeText(getBaseContext(), "Select a style of pizza", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (view.getId() == R.id.btnCheckOut) {
+            Intent intent = new Intent(this, Ac_Payment.class);
+            Bundle bundle = new Bundle();
+            bundle.putParcelableArrayList("pizzalist", pizzas);
+            intent.putExtras(bundle);
+            startActivity(intent);
         }
     }
 }

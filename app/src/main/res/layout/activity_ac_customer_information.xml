@@ -8,7 +8,7 @@
     tools:context=".Ac_CustomerInformation">
 
     <TextView
-        android:id="@+id/payHeader"
+        android:id="@+id/header"
         android:layout_width="276dp"
         android:layout_height="52dp"
         android:text="Customer's Information"
@@ -22,21 +22,21 @@
         android:id="@+id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:ems="10"
-        android:layout_marginTop="@dimen/margin_20"
+        android:ems="12"
+        android:layout_marginTop="@dimen/margin_t5"
         android:hint="Fullname"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/payHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <EditText
         android:id="@+id/streetNumber"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="Street Number"
         android:inputType="number"
         android:background="@color/white"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="City"
         android:inputType="textPersonName"
         android:background="@color/white"
@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="Postal Code"
         android:inputType="textPostalAddress"
         android:background="@color/white"
@@ -71,11 +71,11 @@
         app:layout_constraintTop_toBottomOf="@+id/city" />
 
     <EditText
-        android:id="@+id/phonNumber"
+        android:id="@+id/phoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="Phone Number"
         android:background="@color/white"
         android:inputType="phone"
@@ -88,23 +88,24 @@
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
+        android:ems="12"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
 
     <Button
         android:id="@+id/confirm_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginRight="@dimen/margin_20"
+        android:layout_marginLeft="@dimen/margin_20"
         android:onClick="onConfirmClick"
         android:text="Complete Process"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
