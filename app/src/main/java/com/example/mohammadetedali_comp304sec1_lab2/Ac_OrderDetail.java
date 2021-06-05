@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
@@ -73,9 +74,8 @@ public class Ac_OrderDetail extends AppCompatActivity {
     }
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
+        // Is the radio button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-
         // Check which radio button was clicked
         switch (view.getId()) {
             case R.id.thin_crust:
@@ -94,5 +94,11 @@ public class Ac_OrderDetail extends AppCompatActivity {
                 break;
         }
         updatedPizzaList();
+    }
+
+    public void onCheckoutClick(View view) {
+        if(view.getId() == R.id.btnCheckOut){
+
+        }
     }
 }
