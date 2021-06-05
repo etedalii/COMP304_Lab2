@@ -28,6 +28,4 @@
         android:text="@string/order_now"
         android:onClick="raise_event"
         android:textColor="@android:color/black" />
-
-
 </LinearLayout>

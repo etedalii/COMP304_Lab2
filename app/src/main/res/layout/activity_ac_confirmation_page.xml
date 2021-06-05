@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/centen_black"
     tools:context=".Ac_ConfirmationPage">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_t5"
+        android:textSize="20sp"
+        android:textColor="@color/centennial_color"
+        android:text="Your Pizza order successfully completed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:textSize="20sp"
+        android:textColor="@color/centennial_color"
+        android:text="Your Order List:" />
+    <ListView
+        android:id="@+id/lstPizza"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@color/white"
+        android:textAlignment="center">
+    </ListView>
+
+    <TextView
+        android:id="@+id/txv_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:textSize="20sp"
+        android:textColor="@color/centennial_color" />
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginRight="@dimen/margin_20"
+        android:onClick="onReturnHomeClicked"
+        android:text="Return To Home" />
+
+</LinearLayout>

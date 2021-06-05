@@ -156,4 +156,8 @@ public class Customer implements Parcelable {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getFullAddress() {
+        return streetNumber + " " + city +" " + postalCode;
+    }
 }

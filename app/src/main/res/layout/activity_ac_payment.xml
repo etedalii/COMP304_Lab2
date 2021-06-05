@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="raise_event"
-            android:text="Credit card, or debit card"
+            android:text="Credit card"
             android:textColor="@color/centennial_color"
             android:textSize="25dp" />
 

@@ -30,6 +30,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Ac_SelectPizza extends AppCompatActivity {
+
     TextView txv_pizza_name;
     ImageView img_pizza_name, img_slice_pizza;
     ListView lst_pizza_ingredient;
@@ -48,9 +49,13 @@ public class Ac_SelectPizza extends AppCompatActivity {
             "Organicville Pizza Sauce", "Chopped Red Pepper", "Chopped Green Pepper", "Fresh Spinach", "Fresh White Mushrooms",
             "Mozzarella Cheese", "Parmesan Cheese", "Basil Flakes"};
 
+    //This list user when user select a pizza and added to the card one item add to this list
     ArrayList<Pizza> pizzas = new ArrayList<>();
+
+    //this variable shows the current pizza
     Pizza pizza;
 
+    //These variable I use for the Cart item on the navbar when the user add a item to it shows the number of item in cart
     private Menu mToolbarMenu;
     private static int itemsInCart = 0;
 
@@ -66,6 +71,7 @@ public class Ac_SelectPizza extends AppCompatActivity {
         chb_AddToCart = findViewById(R.id.chb_AddToCart);
     }
 
+    //This event related to the shows menu in activity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -73,6 +79,7 @@ public class Ac_SelectPizza extends AppCompatActivity {
         return true;
     }
 
+    //when a user clicked on the menu item this event is raise
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -83,40 +90,51 @@ public class Ac_SelectPizza extends AppCompatActivity {
                 setPizza(getString(R.string.canadian_pizza));
                 //set proper image for selected pizza
                 img_pizza_name.setBackgroundResource(R.drawable.canadian_pizza);
+                //shows the pizza ingredient in the list
                 setListPizzaIngredientAdapter(canadian_ingredients);
+                //visible the controls in the activity
                 setVisibleControl();
+                //set price and name for pizza
                 pizza.setPrice(9);
                 pizza.setName(getString(R.string.canadian_pizza));
                 return true;
             case R.id.chiken_caesar:
                 setPizza(getString(R.string.chiken_caesar));
                 img_pizza_name.setBackgroundResource(R.drawable.chiken_caesar);
+                //shows the pizza ingredient in the list
                 setListPizzaIngredientAdapter(chiken_caesar_ingredients);
                 setVisibleControl();
+                //set price and name for pizza
                 pizza.setPrice(8);
                 pizza.setName(getString(R.string.chiken_caesar));
                 return true;
             case R.id.hawaiian_pizza:
                 setPizza(getString(R.string.hawaiian_pizza));
                 img_pizza_name.setBackgroundResource(R.drawable.hawaiian);
+                //shows the pizza ingredient in the list
                 setListPizzaIngredientAdapter(hawaiian_pizza_ingredients);
                 setVisibleControl();
+                //set price and name for pizza
                 pizza.setPrice(10);
                 pizza.setName(getString(R.string.hawaiian_pizza));
                 return true;
             case R.id.smoky_maple_pizza:
                 setPizza(getString(R.string.smokey_maple_bacon));
                 img_pizza_name.setBackgroundResource(R.drawable.smoky_maple);
+                //shows the pizza ingredient in the list
                 setListPizzaIngredientAdapter(smoky_maple_pizza_ingredients);
                 setVisibleControl();
+                //set price and name for pizza
                 pizza.setPrice(8);
                 pizza.setName(getString(R.string.smokey_maple_bacon));
                 return true;
             case R.id.vaggie_lover_pizza:
                 setPizza(getString(R.string.veggie_lover_s));
                 img_pizza_name.setBackgroundResource(R.drawable.vaggie);
+                //shows the pizza ingredient in the list
                 setListPizzaIngredientAdapter(vaggie_lover_pizza_ingredients);
                 setVisibleControl();
+                //set price and name for pizza
                 pizza.setPrice(11);
                 pizza.setName(getString(R.string.veggie_lover_s));
                 return true;
@@ -129,6 +147,7 @@ public class Ac_SelectPizza extends AppCompatActivity {
                 //Call the next page and pass a pizza list to the page
                 Intent intent = new Intent(this, Ac_OrderDetail.class);
                 Bundle bundle = new Bundle();
+                // I use parcelable because I want to pass list of entity
                 bundle.putParcelableArrayList("pizzalist", pizzas);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -138,6 +157,7 @@ public class Ac_SelectPizza extends AppCompatActivity {
         }
     }
 
+    //visible the control after call this method
     private void setVisibleControl() {
         img_slice_pizza.setVisibility(View.VISIBLE);
         lst_pizza_ingredient.setVisibility(View.VISIBLE);
@@ -157,6 +177,8 @@ public class Ac_SelectPizza extends AppCompatActivity {
         lst_pizza_ingredient.setAdapter(adapter);
     }
 
+    //this event raise first time when activity refresh or user click on the menu
+    //This use for show the Cart item on the navbar
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         if (mToolbarMenu == null) {
@@ -166,6 +188,7 @@ public class Ac_SelectPizza extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
+    //I use this method for showing the cart item number in the navbar
     private void createCartBadge(int paramInt) {
         MenuItem cartItem = this.mToolbarMenu.findItem(R.id.cart);
         LayerDrawable localLayerDrawable = (LayerDrawable) cartItem.getIcon();
@@ -185,6 +208,8 @@ public class Ac_SelectPizza extends AppCompatActivity {
         cartItem.setIcon(localLayerDrawable);
     }
 
+    //this event raise when user click on the Add to Cart checkbox
+    //if checked pizza add to cart otherwise the item remove from the cart
     public void onCheckboxClicked(View view) {
         boolean checked = ((CheckBox) view).isChecked();
         if (checked) {

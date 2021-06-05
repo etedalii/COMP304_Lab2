@@ -20,6 +20,7 @@ public class Ac_Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    //This event raise when user click on Order Button in main activity
     public void raise_event(View view) {
         if (view.getId() == R.id.btnOrder){
             Intent intent = new Intent(this,Ac_SelectPizza.class);
