@@ -8,11 +8,10 @@
     android:orientation="vertical"
     tools:context=".Ac_OrderDetail">
 
-
     <ListView
         android:id="@+id/lstPizza"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/layout_h250"
         android:layout_marginTop="@dimen/margin_t5"
         android:background="@color/white"
         android:textAlignment="center">
@@ -29,26 +28,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Thin crust"
+            android:text="@string/thin_crust"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
 
         <RadioButton
             android:id="@+id/thick_crust"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Thick crust"
+            android:text="@string/thick_crust"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
     </RadioGroup>
 
     <Spinner
         android:id="@+id/pizza_size_spinner"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/layout_h40"
         android:layout_marginTop="@dimen/margin_t5"
-        android:layout_weight="0"
         android:background="@color/centennial_color"
         android:textColor="@color/centen_black" />
 
@@ -56,18 +54,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_t5"
-        android:text="Style of pizza/dough:"
+        android:text="@string/style_of_pizza_dough"
         android:textColor="@color/centennial_color"
-        android:textSize="25dp" />
+        android:textSize="@dimen/text_size25" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_t5"
         android:layout_weight="0"
-        android:text="Select Size of Pizza:"
+        android:text="@string/select_size_of_pizza"
         android:textColor="@color/centennial_color"
-        android:textSize="25dp" />
+        android:textSize="@dimen/text_size25" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -78,9 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_t5"
-            android:text="Total Price: "
+            android:text="@string/total_price"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
 
         <TextView
             android:id="@+id/txv_totalPrice"
@@ -88,7 +86,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_t5"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
     </LinearLayout>
 
     <Button
@@ -98,5 +96,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_20"
         android:onClick="onCheckoutClick"
-        android:text="Checkout" />
+        android:text="@string/checkout" />
 </LinearLayout>

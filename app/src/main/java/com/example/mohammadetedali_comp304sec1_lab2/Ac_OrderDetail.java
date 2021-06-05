@@ -23,6 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Ac_OrderDetail extends AppCompatActivity {
+
     ListView lst_pizza;
     ArrayList<Pizza> pizzas;
     Spinner pizza_size_spinner;
@@ -34,9 +35,11 @@ public class Ac_OrderDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ac_order_detail);
 
+        //These two line get the data from the previous activity
         Bundle bundle = getIntent().getExtras();
         pizzas = bundle.getParcelableArrayList("pizzalist");
 
+        //get a spinner control and add data to it
         pizza_size_spinner = (Spinner) findViewById(R.id.pizza_size_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -48,6 +51,8 @@ public class Ac_OrderDetail extends AppCompatActivity {
 
         txv_totalPrice = findViewById(R.id.txv_totalPrice);
         lst_pizza = findViewById(R.id.lstPizza);
+
+        //this method call to show pizza list to the ListView
         updatedPizzaList();
 
         //This event check if the size of pizza was change the List view update base on new data
@@ -70,6 +75,7 @@ public class Ac_OrderDetail extends AppCompatActivity {
         });
     }
 
+    //Show the pizza list in the list view and calculate the total of the price
     private void updatedPizzaList() {
         ArrayAdapter<Pizza> pizzaAdapter = new ArrayAdapter<Pizza>(getApplicationContext(),
                 android.R.layout.simple_list_item_1, pizzas);
@@ -79,9 +85,11 @@ public class Ac_OrderDetail extends AppCompatActivity {
         for (Pizza item : pizzas) {
             totalPrice += item.getPrice();
         }
+        //show total price in the proper text view
         txv_totalPrice.setText(String.format("$ %s", String.valueOf(totalPrice)));
     }
 
+    //this event raise when user click on one the radio button on the activity
     public void onRadioButtonClicked(View view) {
         doughSelected = true;
         // Is the radio button now checked?
@@ -103,14 +111,18 @@ public class Ac_OrderDetail extends AppCompatActivity {
                 }
                 break;
         }
+        //update the list with new data
         updatedPizzaList();
     }
 
+    //raise when user click on finalize the order
     public void onCheckoutClick(View view) {
+        //check if the user does not select the dough type get message
         if (!doughSelected) {
             Toast.makeText(getBaseContext(), "Select a style of pizza", Toast.LENGTH_LONG).show();
             return;
         }
+        //call the next page with passing the data to it
         if (view.getId() == R.id.btnCheckOut) {
             Intent intent = new Intent(this, Ac_Payment.class);
             Bundle bundle = new Bundle();

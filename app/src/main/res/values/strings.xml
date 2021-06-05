@@ -15,6 +15,13 @@
     <string name="hawaiian_pizza">Hawaiian Pizza</string>
     <string name="smokey_maple_bacon">Smokey Maple Bacon</string>
     <string name="veggie_lover_s">Veggie Lover\'s</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="thin_crust">Thin crust</string>
+    <string name="thick_crust">Thick crust</string>
+    <string name="style_of_pizza_dough">Style of pizza/dough:</string>
+    <string name="select_size_of_pizza">Select Size of Pizza:</string>
+    <string name="total_price">Total Price:</string>
+    <string name="checkout">Checkout</string>
 
     <string-array name="pizza_size_array">
         <item>Small</item>
