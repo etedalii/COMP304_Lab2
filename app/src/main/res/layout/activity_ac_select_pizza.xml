@@ -11,66 +11,15 @@
         android:id="@+id/chb_AddToCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="raise_event"
+        android:layout_marginTop="30dp"
+        android:onClick="onCheckboxClicked"
+        android:visibility="invisible"
         android:text="Add To Cart"
+        android:textSize="30dp"
         android:textColor="@color/centennial_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.351"
-        app:layout_constraintStart_toEndOf="@+id/topping1"
-        app:layout_constraintTop_toBottomOf="@+id/topping4" />
-
-    <CheckBox
-        android:id="@+id/topping1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="raise_event"
-        android:text="Onion"
-        android:textColor="@color/centennial_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extraTopping" />
-
-    <CheckBox
-        android:id="@+id/topping2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="raise_event"
-        android:text="Pinapple"
-        android:textColor="@color/centennial_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extraTopping" />
-
-    <CheckBox
-        android:id="@+id/topping3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="raise_event"
-        android:text="Spinach"
-        android:textColor="@color/centennial_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extraTopping" />
-
-    <CheckBox
-        android:id="@+id/topping4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="raise_event"
-        android:text="Tomato"
-        android:textColor="@color/centennial_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.951"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extraTopping" />
+        app:layout_constraintTop_toBottomOf="@+id/pizza_ingredients" />
 
     <ImageView
         android:id="@+id/pizza_image"
@@ -102,84 +51,21 @@
         android:layout_height="247dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="64dp"
+        android:textAlignment="center"
         android:background="@color/white"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txv_pizza_name">
-
     </ListView>
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="370dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="12dp"
-        android:onClick="raise_event"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseSize">
-
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="123dp"
-            android:layout_height="47dp"
-            android:onClick="raise_event"
-            android:textColor="@color/centennial_color"
-            android:text="Med ($9.99)" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="122dp"
-            android:layout_height="match_parent"
-            android:onClick="raise_event"
-            android:textColor="@color/centennial_color"
-            android:text="Lrg ($13.99)" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="128dp"
-            android:layout_height="match_parent"
-            android:onClick="raise_event"
-            android:textColor="@color/centennial_color"
-            android:text="XLrg ($15.99)" />
-    </RadioGroup>
 
     <TextView
         android:id="@+id/txv_pizza_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/centennial_color"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/chooseSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
-        android:textColor="@color/centennial_color"
-        android:text="Choose pizza size: "
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txv_pizza_name" />
-
-    <TextView
-        android:id="@+id/extraTopping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Extra Toppings ($1.69 each):"
-        android:textColor="@color/centennial_color"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

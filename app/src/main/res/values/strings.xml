@@ -15,4 +15,12 @@
     <string name="hawaiian_pizza">Hawaiian Pizza</string>
     <string name="smokey_maple_bacon">Smokey Maple Bacon</string>
     <string name="veggie_lover_s">Veggie Lover\'s</string>
+
+    <string-array name="pizza_size_array">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Extra-Large</item>
+    </string-array>
+
 </resources>
