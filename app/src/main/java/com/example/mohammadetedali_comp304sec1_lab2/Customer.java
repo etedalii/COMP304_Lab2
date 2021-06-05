@@ -1,8 +1,16 @@
 package com.example.mohammadetedali_comp304sec1_lab2;
+/*
+    Author: Mohammad Etedali - 301056465
+    Code updated: June 2021
+    Course: 304 Sec 001
+    Date: 6 June 2021
+    https://developer.android.com/reference/android/os/Parcelable
+ */
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
+//This class keep the customer information 
 public class Customer implements Parcelable {
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {

@@ -17,4 +17,10 @@
     <dimen name="layout_h250">250dp</dimen>
     <dimen name="text_size25">25sp</dimen>
     <dimen name="layout_h40">40dp</dimen>
+    <dimen name="layout_h35">35dp</dimen>
+    <dimen name="margin_t16">16dp</dimen>
+    <dimen name="layout_w276">276dp</dimen>
+    <dimen name="layout_h52">52dp</dimen>
+    <dimen name="layout_h45">45dp</dimen>
+    <dimen name="margin_t12">12dp</dimen>
 </resources>

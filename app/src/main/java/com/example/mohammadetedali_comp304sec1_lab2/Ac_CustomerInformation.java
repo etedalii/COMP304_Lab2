@@ -1,4 +1,10 @@
 package com.example.mohammadetedali_comp304sec1_lab2;
+/*
+    Author: Mohammad Etedali - 301056465
+    Code updated: June 2021
+    Course: 304 Sec 001
+    Date: 6 June 2021
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +25,7 @@ public class Ac_CustomerInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ac_customer_information);
 
+        //these three line use to get data from previous activity, the pizza list and customer
         Bundle bundle = getIntent().getExtras();
         pizzas = bundle.getParcelableArrayList("pizzalist");
         customer = bundle.getParcelable("customer");
@@ -31,28 +38,13 @@ public class Ac_CustomerInformation extends AppCompatActivity {
         email = findViewById(R.id.email);
     }
 
+    //this event raise when user click on the confirm button
     public void onConfirmClick(View view) {
-        if(fullName.getText().toString().isEmpty()){
-            fullName.setError("Fullname is required!");
+        //check whether the necessary data was import or not
+        if(!validateData())
             return;
-        }
-        if(streetNumber.getText().toString().isEmpty()){
-            streetNumber.setError("Street number is required!");
-            return;
-        }
-        if(city.getText().toString().isEmpty()){
-            city.setError("City is required!");
-            return;
-        }
-        if(postalCode.getText().toString().isEmpty()){
-            postalCode.setError("Postal code is required!");
-            return;
-        }
-        if(phoneNumber.getText().toString().isEmpty()){
-            phoneNumber.setError("Phone number is required!");
-            return;
-        }
 
+        //Add the new data such as address and name and phone number to the customer entity
         customer.setFullName(fullName.getText().toString());
         customer.setStreetNumber(streetNumber.getText().toString());
         customer.setCity(city.getText().toString());
@@ -60,11 +52,38 @@ public class Ac_CustomerInformation extends AppCompatActivity {
         customer.setPhoneNumber(phoneNumber.getText().toString());
         customer.setEmail(email.getText().toString());
 
+        //pass the customer entity and pizza list to the next activity
         Intent intent = new Intent(this, Ac_ConfirmationPage.class);
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("pizzalist", pizzas);
         bundle.putParcelable("customer", customer);
         intent.putExtras(bundle);
         startActivity(intent);
+    }
+
+    //check the edit text data is fill or not
+    private  boolean  validateData(){
+        if(fullName.getText().toString().isEmpty()){
+            fullName.setError(getString(R.string.familyRequired));
+            return false;
+        }
+        if(streetNumber.getText().toString().isEmpty()){
+            streetNumber.setError(getString(R.string.streetRequired));
+            return false;
+        }
+        if(city.getText().toString().isEmpty()){
+            city.setError(getString(R.string.cityRequired));
+            return false;
+        }
+        if(postalCode.getText().toString().isEmpty()){
+            postalCode.setError(getString(R.string.postalCodeRequired));
+            return false;
+        }
+        if(phoneNumber.getText().toString().isEmpty()){
+            phoneNumber.setError(getString(R.string.phoneNumberRequired));
+            return false;
+        }
+
+        return true;
     }
 }

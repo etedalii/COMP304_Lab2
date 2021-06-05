@@ -12,23 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_20"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_t5"
         android:layout_marginRight="@dimen/margin_20"
         android:onClick="raise_event"
-        android:text="Pay"
+        android:text="@string/pay"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imgCard" />
 
     <EditText
         android:id="@+id/lastName"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="@dimen/layout_h35"
         android:layout_marginTop="12dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Cardholder's last name"
+        android:hint="@string/cardholder_s_last_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,11 +36,11 @@
     <EditText
         android:id="@+id/cardNum"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/layout_h35"
+        android:layout_marginTop="@dimen/margin_t16"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Card Number"
+        android:hint="@string/card_number"
         android:inputType="number"
         android:maxLength="16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,11 +50,12 @@
     <EditText
         android:id="@+id/date"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="@dimen/layout_h35"
         android:layout_marginTop="16dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Expiration Date"
+        android:hint="@string/expiration_date"
+        android:maxLength="5"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,20 +64,20 @@
     <EditText
         android:id="@+id/firstName"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="@dimen/layout_h35"
         android:background="@color/white"
         android:ems="10"
-        android:hint="Cardholder's first name"
+        android:hint="@string/cardholder_s_first_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paymentOptions" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imgCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_t5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date"
@@ -99,39 +99,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="raise_event"
-            android:text="Cash"
+            android:text="@string/cash"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
 
         <RadioButton
             android:id="@+id/credit_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="raise_event"
-            android:text="Credit card"
+            android:text="@string/credit_card"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
 
         <RadioButton
             android:id="@+id/debit_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="raise_event"
-            android:text="Debit card"
+            android:text="@string/debit_card"
             android:textColor="@color/centennial_color"
-            android:textSize="25dp" />
+            android:textSize="@dimen/text_size25" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/payHeader"
         android:layout_width="276dp"
         android:layout_height="52dp"
-        android:text="Place your order!"
+        android:text="@string/place_your_order"
         android:textColor="@color/centennial_color"
-        android:textSize="35sp"
+        android:textSize="@dimen/text_size_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

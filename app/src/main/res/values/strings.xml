@@ -22,6 +22,31 @@
     <string name="select_size_of_pizza">Select Size of Pizza:</string>
     <string name="total_price">Total Price:</string>
     <string name="checkout">Checkout</string>
+    <string name="pay">Pay</string>
+    <string name="cardholder_s_last_name">Cardholder\'s last name</string>
+    <string name="card_number">Card Number</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cardholder_s_first_name">Cardholder\'s first name</string>
+    <string name="cash">Cash</string>
+    <string name="credit_card">Credit card</string>
+    <string name="debit_card">Debit card</string>
+    <string name="place_your_order">Place your order!</string>
+    <string name="familyRequired">Fullname is required!</string>
+    <string name="streetRequired">Street number is required!</string>
+    <string name="cityRequired">City is required!</string>
+    <string name="postalCodeRequired">Postal code is required!</string>
+    <string name="phoneNumberRequired">Phone number is required!</string>
+    <string name="customer_s_information">Customer Information</string>
+    <string name="fullname">Fullname</string>
+    <string name="street_number">Street Number</string>
+    <string name="city">City</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="complete_process">Complete Process</string>
+    <string name="your_pizza_order_successfully_completed">Your Pizza order successfully completed</string>
+    <string name="your_order_list">Your Order List:</string>
+    <string name="return_to_home">Return To Home</string>
 
     <string-array name="pizza_size_array">
         <item>Small</item>

@@ -12,21 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_t5"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size20"
         android:textColor="@color/centennial_color"
-        android:text="Your Pizza order successfully completed" />
+        android:text="@string/your_pizza_order_successfully_completed" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_20"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size25"
         android:textColor="@color/centennial_color"
-        android:text="Your Order List:" />
+        android:text="@string/your_order_list" />
     <ListView
         android:id="@+id/lstPizza"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/layout_h250"
         android:layout_marginTop="@dimen/margin_20"
         android:background="@color/white"
         android:textAlignment="center">
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_20"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size20"
         android:textColor="@color/centennial_color" />
 
     <Button
@@ -47,6 +47,6 @@
         android:layout_marginLeft="@dimen/margin_20"
         android:layout_marginRight="@dimen/margin_20"
         android:onClick="onReturnHomeClicked"
-        android:text="Return To Home" />
+        android:text="@string/return_to_home" />
 
 </LinearLayout>
